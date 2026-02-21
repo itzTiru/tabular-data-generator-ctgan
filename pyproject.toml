@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling>=1.26.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tabular-synthetic-data-generator-ctgan"
+version = "0.1.0"
+description = "Privacy-aware synthetic tabular data generation with CTGAN and TVAE"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Project Contributors" }
+]
+dependencies = [
+  "joblib>=1.4.0",
+  "matplotlib>=3.8.0",
+  "numpy>=1.26.0",
+  "pandas>=2.2.0",
+  "plotly>=5.24.0",
+  "pyyaml>=6.0.2",
+  "scikit-learn>=1.5.0",
+  "scipy>=1.13.0",
+  "sdv>=1.16.0",
+  "streamlit>=1.39.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.0",
+  "ruff>=0.7.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src",
+  "scripts",
+  "app",
+  "configs",
+  "README.md",
+  "LICENSE",
+  "pyproject.toml",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

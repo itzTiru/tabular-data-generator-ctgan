@@ -1,0 +1,26 @@
+﻿# Virtual environments and tooling
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Python artifacts
+*.pyc
+*.pyo
+*.pyd
+
+# Data files are intentionally tracked
+
+# Artifacts and reports (keep structure only)
+artifacts/models/*
+!artifacts/models/.gitkeep
+reports/figures/*
+!reports/figures/.gitkeep
+reports/*.json
+reports/*.png
+
+# IDE and OS noise
+.vscode/
+.DS_Store
+Thumbs.db
