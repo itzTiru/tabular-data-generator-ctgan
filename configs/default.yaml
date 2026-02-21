@@ -1,0 +1,32 @@
+﻿data:
+  default_path: data/raw/sample_dataset.csv
+  processed_dir: data/processed
+  synthetic_dir: data/synthetic
+
+artifacts:
+  preprocess_artifacts_path: artifacts/preprocess_artifacts.json
+  models_dir: artifacts/models
+
+reports:
+  metrics_path: reports/metrics.json
+  figures_dir: reports/figures
+
+split:
+  cutoff_date: "2017-01-01"
+
+generation:
+  scales: [1, 5, 10]
+
+models:
+  enabled: [ctgan, tvae]
+  ctgan:
+    epochs: 50
+    batch_size: 500
+    verbose: false
+  tvae:
+    epochs: 50
+    batch_size: 500
+    verbose: false
+
+runtime:
+  random_seed: 42
